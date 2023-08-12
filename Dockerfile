@@ -3,6 +3,7 @@ FROM registry-intl.cn-hongkong.aliyuncs.com/rakesh/run:codebuild
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 # Install base dependencies
+RUN gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 871920D1991BC93C && gpg --export 871920D1991BC93C | sudo tee /etc/apt/trusted.gpg.d/ubuntu.lafibre.info.gpg
 RUN apt-get update && apt-get install -y -q --no-install-recommends \
         apt-transport-https \
         build-essential \
