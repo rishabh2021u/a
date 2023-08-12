@@ -1,5 +1,6 @@
 FROM  ubuntu
-RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/mirror.xtom.com.hk/g' /etc/apt/sources.list
+RUN apt clean
+# RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/mirror.xtom.com.hk/g' /etc/apt/sources.list
 # Install ngrok
 ENV NOTVISIBLE "in users profile"
 RUN apt update -y && apt install -y tar curl openssh-client openssh-server
